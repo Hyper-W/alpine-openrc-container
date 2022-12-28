@@ -1,0 +1,9 @@
+services:
+  alpine-openrc:
+    build:
+      context: .
+    container_name: alpine-openrc
+    image: alpine-openrc
+    privileged: true
+    # cap_add:
+    # - "SYS_ADMIN"
