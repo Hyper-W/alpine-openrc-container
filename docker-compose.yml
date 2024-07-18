@@ -3,7 +3,7 @@ services:
     build:
       context: .
     container_name: alpine-openrc
-    image: alpine-openrc
+    image: ghcr.io/hyper-w/systemd-containers/alpine-openrc
     privileged: true
     # cap_add:
     # - "SYS_ADMIN"
