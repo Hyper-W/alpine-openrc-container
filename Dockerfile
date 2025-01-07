@@ -1,6 +1,7 @@
 FROM alpine:latest
 
-RUN apk update && apk add --no-cache openrc \
+RUN mkdir -p /usr/libexec/rc && ln -s /usr/libexec/rc /lib/rc \
+    && apk update && apk add --no-cache openrc \
     && sed -i 's/#rc_sys=""/rc_sys="lxc"/g' /etc/rc.conf \
     && echo 'rc_provide="loopback net"' >> /etc/rc.conf \
     && sed -i 's/^#\(rc_logger="YES"\)$/\1/' /etc/rc.conf \
